@@ -24,10 +24,9 @@ def faceDetect():
             cv2.putText(frame,"detect",(x-5,y-5),font,0.9,(0,255,0),2)
 
         cv2.imshow('frame', frame)
-        if cv2.waitKey(1) != 255:
+        k =cv2.waitKey(1)
+        if k ==27:
+            cv2.destroyAllWindows()
             break
-
-    cap.release()
-    cv2.destroyAllWindows()
 
 faceDetect()
